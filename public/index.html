@@ -1,0 +1,1538 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../public/css/tailwind.css" />
+    <title>Food</title>
+  </head>
+  <body class="font-sans dark:bg-gray-900">
+    <header>
+      <section
+        class="w-full h-14 dark:bg-gray-800 md:fixed md:top-0 md:dark:bg-gray-800"
+        id="nav"
+      >
+        <div
+          class="w-full h-full bg-white dark:bg-gray-800 flex items-center shadow-xl md:top-0 md:w-full md:h-16 md:flex md:justify-between md:dark:bg-gray-800"
+          id="nav-container"
+        >
+          <div class="ml-4" id="logo">
+            <img
+              class="w-24 h-auto lg:w-20"
+              src="img/logo.png"
+              alt="logo de la empresa food"
+            />
+          </div>
+          <div class="w-full h-8 flex justify-center md:hidden" id="nav-search">
+            <input
+              class="w-3/4 h-full border-b border-gray-400 dark:bg-gray-700 dark:text-white dark:border-white"
+              type="search"
+              name="seach"
+              id="search"
+              placeholder="Search"
+            />
+            <svg
+              class="self-center dark:stroke-white"
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M11 19C15.4183 19 19 15.4183 19 11C19 6.58172 15.4183 3 11 3C6.58172 3 3 6.58172 3 11C3 15.4183 6.58172 19 11 19Z"
+                stroke="grey"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <path
+                d="M21 21L16.65 16.65"
+                stroke="grey"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </div>
+          <div
+            class="w-auto h-auto flex space-x-4 gap-5 sm:hidden md:flex dark:text-whites md:dark:text-white"
+            id="nav-texts"
+          >
+            <a class="hover:font-semibold hover:text-primary" href="#hero">Home</a>
+            <a class="hover:font-semibold hover:text-primary" href="#about-us">About</a>
+            <a class="hover:font-semibold hover:text-primary" href="#menu">Menu</a>
+            <a class="hover:font-semibold hover:text-primary" href="#gallery">Gallery</a>
+            <a class="hover:font-semibold hover:text-primary" href="#review">Review</a>
+            <a class="hover:font-semibold hover:text-primary" href="#form">Order</a>
+            <a class="hover:font-semibold hover:text-primary" href="#footer">Contact</a>
+          </div>
+          <div class="w-auto h-auto flex space-x-4 mr-4 sm:hidden md:flex" id="nav-icons">
+            <button id="dark-btn">
+              <svg
+                width="24"
+                height="24"
+                viewBox="0 0 28 28"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                class="dark:fill-[#FAC031]"
+              >
+                <path
+                  d="M27 15.1712C26.7723 17.6351 25.8476 19.9833 24.334 21.9409C22.8205 23.8985 20.7807 25.3845 18.4534 26.2252C16.1261 27.0658 13.6076 27.2263 11.1924 26.6877C8.77726 26.1492 6.56542 24.934 4.81571 23.1843C3.066 21.4346 1.85078 19.2227 1.31226 16.8076C0.77374 14.3924 0.934184 11.8739 1.77482 9.54656C2.61545 7.21926 4.10151 5.17951 6.05911 3.66597C8.0167 2.15242 10.3649 1.2277 12.8288 1C11.3863 2.95164 10.6921 5.35622 10.8726 7.77642C11.053 10.1966 12.0962 12.4716 13.8123 14.1877C15.5284 15.9038 17.8034 16.947 20.2236 17.1274C22.6438 17.3079 25.0484 16.6137 27 15.1712Z"
+                  stroke="black"
+                  stroke-width="1"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </button>
+            <svg
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                class="dark:stroke-[#FAC031]"
+                d="M11 19C15.4183 19 19 15.4183 19 11C19 6.58172 15.4183 3 11 3C6.58172 3 3 6.58172 3 11C3 15.4183 6.58172 19 11 19Z"
+                stroke="black"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <path
+                class="dark:stroke-[#FAC031]"
+                d="M21 21L16.65 16.65"
+                stroke="black"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+            <svg
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                class="dark:stroke-[#FAC031] dark:fill-none"
+                d="M20.84 4.60999C20.3292 4.099 19.7228 3.69364 19.0554 3.41708C18.3879 3.14052 17.6725 2.99817 16.95 2.99817C16.2275 2.99817 15.5121 3.14052 14.8446 3.41708C14.1772 3.69364 13.5708 4.099 13.06 4.60999L12 5.66999L10.94 4.60999C9.90831 3.5783 8.50903 2.9987 7.05 2.9987C5.59097 2.9987 4.19169 3.5783 3.16 4.60999C2.12831 5.64169 1.54871 7.04096 1.54871 8.49999C1.54871 9.95903 2.12831 11.3583 3.16 12.39L4.22 13.45L12 21.23L19.78 13.45L20.84 12.39C21.351 11.8792 21.7564 11.2728 22.0329 10.6053C22.3095 9.93789 22.4518 9.22248 22.4518 8.49999C22.4518 7.77751 22.3095 7.0621 22.0329 6.39464C21.7564 5.72718 21.351 5.12075 20.84 4.60999Z"
+                fill="black"
+              />
+            </svg>
+            <svg
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                class="dark:stroke-[#FAC031]"
+                d="M9 22C9.55228 22 10 21.5523 10 21C10 20.4477 9.55228 20 9 20C8.44772 20 8 20.4477 8 21C8 21.5523 8.44772 22 9 22Z"
+                stroke="black"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <path
+                class="dark:stroke-[#FAC031]"
+                d="M20 22C20.5523 22 21 21.5523 21 21C21 20.4477 20.5523 20 20 20C19.4477 20 19 20.4477 19 21C19 21.5523 19.4477 22 20 22Z"
+                stroke="black"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <path
+                class="dark:stroke-[#FAC031]"
+                d="M1 1H5L7.68 14.39C7.77144 14.8504 8.02191 15.264 8.38755 15.5583C8.75318 15.8526 9.2107 16.009 9.68 16H19.4C19.8693 16.009 20.3268 15.8526 20.6925 15.5583C21.0581 15.264 21.3086 14.8504 21.4 14.39L23 6H6"
+                stroke="black"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </div>
+        </div>
+      </section>
+      <section
+        class="w-full h-full space-y-9 md:mt-20 md:flex md:justify-between"
+        id="hero"
+      >
+        <div
+          class="text-center space-y-6 mx-6 md:w-1/2 md:h-[34rem] md:text-start md:flex md:flex-col md:justify-center md:pl-10"
+          id="content-hero-container"
+        >
+          <div class="dark-mode md:hidden">
+            <button id="dark-btn-sm">
+              <svg
+                width="28"
+                height="28"
+                viewBox="0 0 28 28"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                class="dark:fill-[#FAC031]"
+              >
+                <path
+                  d="M27 15.1712C26.7723 17.6351 25.8476 19.9833 24.334 21.9409C22.8205 23.8985 20.7807 25.3845 18.4534 26.2252C16.1261 27.0658 13.6076 27.2263 11.1924 26.6877C8.77726 26.1492 6.56542 24.934 4.81571 23.1843C3.066 21.4346 1.85078 19.2227 1.31226 16.8076C0.77374 14.3924 0.934184 11.8739 1.77482 9.54656C2.61545 7.21926 4.10151 5.17951 6.05911 3.66597C8.0167 2.15242 10.3649 1.2277 12.8288 1C11.3863 2.95164 10.6921 5.35622 10.8726 7.77642C11.053 10.1966 12.0962 12.4716 13.8123 14.1877C15.5284 15.9038 17.8034 16.947 20.2236 17.1274C22.6438 17.3079 25.0484 16.6137 27 15.1712Z"
+                  stroke="#FAC031"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </button>
+          </div>
+          <div>
+            <h1 class="title-black">
+              Get fresh <span class="title-yellow">Food</span> in a easy way
+            </h1>
+          </div>
+          <div>
+            <p class="font-medium dark:text-white md:hidden">
+              Duis ac leo pulvinar, interdum diam in, fringilla lacus. Curabitur a
+              ultricies ligula. Pellentesque tincidunt augue libero, in hendrerit ipsum
+              semper quis.
+            </p>
+            <p class="font-medium dark:text-white sm:hidden">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut vestibulum
+              tempus mollis. Fusce a efficitur nibh. Nunc suscipit diam non justo semper,
+              quis placerat risus iaculis. Duis ac leo pulvinar, interdum diam in,
+              fringilla lacus. Curabitur a ultricies ligula. Pellentesque tincidunt augue
+              libero, in hendrerit ipsum semper quis. Suspendisse luctus elit varius,
+              feugiat leo eu, dictum augue. Integer ac nunc porttitor, sodales massa non,
+              elementum eros. Vivamus nec turpis non lorem maximus tempor. Maecenas
+              sollicitudin augue quis volutpat lacinia. Cras hendrerit auctor ipsum, eu
+              convallis magna lacinia a. Vivamus accumsan orci ut nisi pretium, tincidunt
+              ultricies odio lacinia.
+            </p>
+          </div>
+          <div class="w-full h-auto flex justify-center md:justify-start">
+            <button
+              class="w-32 h-10 rounded-md bg-primary flex items-center justify-center bottom-0 hover:font-semibold hover:bg-[#FFD368]"
+            >
+              Order now
+              <i
+                ><svg
+                  width="19"
+                  height="18"
+                  viewBox="0 0 19 18"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M7.125 13.5L11.875 9L7.125 4.5"
+                    stroke="black"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </i>
+            </button>
+          </div>
+        </div>
+        <div
+          class="flex justify-center md:w-max md:flex md:justify-center"
+          id="img-hero-container"
+        >
+          <img class="w-80 h-auto md:w-[40rem] md:h-auto" src="img/main_img.png" alt="" />
+        </div>
+      </section>
+    </header>
+    <main>
+      <section
+        class="w-full sm:h-[36rem] md:h-[40rem] flex  md:flex md:flex-row-reverse md:mt-10"
+        id="about-us"
+      >
+        <div
+          class="w-3/5 h-full sm:w-1/2 flex flex-col justify-center space-y-6 mx-6 md:w-2/5 md:flex md:flex-col md:justify-center"
+          id="about-us-content"
+        >
+          <h2 class="title-black">About<span class="title-yellow"> us</span></h2>
+          <h3 class="title-2 dark:text-white md:text-4xl">Why choose us?</h3>
+          <p class="font-medium dark:text-white md:hidden">
+            augue quis volutpat lacinia. Suspendisse luctus
+            elit varius, feugiat leo eu, dictum augue. Integer ac nunc porttitor, sodales
+            massa non, elementum eros.
+          </p>
+          </p>
+          <p class="font-medium dark:text-white sm:hidden">
+            Suspendisse luctus elit varius, feugiat leo eu, dictum augue. Integer ac nunc
+            porttitor, sodales massa non, elementum eros. Vivamus nec turpis non lorem
+            maximus tempor. Maecenas sollicitudin augue quis volutpat lacinia. Suspendisse
+            luctus elit varius, feugiat leo eu, dictum augue. Integer ac nunc porttitor,
+            sodales massa non, elementum eros. Vivamus nec turpis non lorem maximus
+            tempor. Maecenas sollicitudin augue quis volutpat lacinia. Suspendisse luctus
+            elit varius, feugiat leo eu, dictum augue. Integer ac nunc porttitor, sodales
+            massa non, elementum eros.
+          </p>
+          <div class="w-full h-auto flex justify-center md:justify-start">
+            <button
+              class="w-32 h-10 rounded-md bg-primary flex items-center justify-center bottom-0 hover:font-semibold hover:bg-[#FFD368]"
+            >
+              Order now
+              <i
+                ><svg
+                  width="19"
+                  height="18"
+                  viewBox="0 0 19 18"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M7.125 13.5L11.875 9L7.125 4.5"
+                    stroke="black"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </i>
+            </button>
+          </div>
+        </div>
+        <div
+          class="w-5/12 h-80 sm:w-96 sm:absolute sm:-right-56 bg-foodplate bg-cover self-center justify-start overflow-hidden md:w-1/2 md:h-[46rem] bg-center"
+        ></div>
+      </section>
+      <section class="w-full h-auto md:text-center" id="menu">
+        <h2 class="title-black pl-6">Our<span class="title-yellow"> menu</span></h2>
+        <div
+          class="overflow-x-auto overscroll-x-contain px-6 sm:scrollbar-none md:flex md:justify-center md:px-0 md:mt-5"
+        >
+          <div class="cards-container-menu" id="cards-container">
+            <div class="card">
+              <div class="">
+                <img
+                  class="card-img"
+                  src="img/biryani.webp"
+                  alt="imagen de un plato de biryani"
+                />
+              </div>
+              <h3 class="text-primary font-semibold text-lg">Food name</h3>
+              <p class="font-semibold">
+                Texto de ejemplo del producto donde iría detallado los ingredientes
+              </p>
+              <p class="font-bold">$20.00</p>
+              <svg
+                width="60"
+                height="12"
+                viewBox="0 0 60 12"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M6 1L7.545 4.13L11 4.635L8.5 7.07L9.09 10.51L6 8.885L2.91 10.51L3.5 7.07L1 4.635L4.455 4.13L6 1Z"
+                  fill="#FAC031"
+                />
+                <path
+                  d="M18 1L19.545 4.13L23 4.635L20.5 7.07L21.09 10.51L18 8.885L14.91 10.51L15.5 7.07L13 4.635L16.455 4.13L18 1Z"
+                  fill="#FAC031"
+                />
+                <path
+                  d="M30 1L31.545 4.13L35 4.635L32.5 7.07L33.09 10.51L30 8.885L26.91 10.51L27.5 7.07L25 4.635L28.455 4.13L30 1Z"
+                  fill="#FAC031"
+                />
+                <path
+                  d="M42 1L43.545 4.13L47 4.635L44.5 7.07L45.09 10.51L42 8.885L38.91 10.51L39.5 7.07L37 4.635L40.455 4.13L42 1Z"
+                  fill="#FAC031"
+                />
+                <path
+                  d="M54 1L55.545 4.13L59 4.635L56.5 7.07L57.09 10.51L54 8.885L50.91 10.51L51.5 7.07L49 4.635L52.455 4.13L54 1Z"
+                  stroke="#FAC031"
+                  stroke-width="0.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path d="M54 1.5V9" stroke="#FAC031" stroke-width="0.5" />
+                <path
+                  d="M53.5 9V2.5V2M53 3V9.5M52.5 4V9.5M52 4V10M51.5 4.5V7V10M51 4.5V6.5M50.5 4.5V6M50 4.5V5.5M49.5 4.5V5"
+                  stroke="#FAC031"
+                  stroke-width="0.5"
+                />
+              </svg>
+              <div>
+                <button class="card-btn">Order Now</button>
+              </div>
+            </div>
+            <div class="card">
+              <div class="">
+                <img
+                  class="card-img"
+                  src="img/buger.jpg"
+                  alt="imagen de una hamburguesa"
+                />
+              </div>
+              <h3 class="text-primary font-semibold text-lg">Food name</h3>
+              <p class="font-semibold">
+                Texto de ejemplo del producto donde iría detallado los ingredientes
+              </p>
+              <p class="font-bold">$20.00</p>
+              <svg
+                width="60"
+                height="12"
+                viewBox="0 0 60 12"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M6 1L7.545 4.13L11 4.635L8.5 7.07L9.09 10.51L6 8.885L2.91 10.51L3.5 7.07L1 4.635L4.455 4.13L6 1Z"
+                  fill="#FAC031"
+                />
+                <path
+                  d="M18 1L19.545 4.13L23 4.635L20.5 7.07L21.09 10.51L18 8.885L14.91 10.51L15.5 7.07L13 4.635L16.455 4.13L18 1Z"
+                  fill="#FAC031"
+                />
+                <path
+                  d="M30 1L31.545 4.13L35 4.635L32.5 7.07L33.09 10.51L30 8.885L26.91 10.51L27.5 7.07L25 4.635L28.455 4.13L30 1Z"
+                  fill="#FAC031"
+                />
+                <path
+                  d="M42 1L43.545 4.13L47 4.635L44.5 7.07L45.09 10.51L42 8.885L38.91 10.51L39.5 7.07L37 4.635L40.455 4.13L42 1Z"
+                  fill="#FAC031"
+                />
+                <path
+                  d="M54 1L55.545 4.13L59 4.635L56.5 7.07L57.09 10.51L54 8.885L50.91 10.51L51.5 7.07L49 4.635L52.455 4.13L54 1Z"
+                  stroke="#FAC031"
+                  stroke-width="0.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path d="M54 1.5V9" stroke="#FAC031" stroke-width="0.5" />
+                <path
+                  d="M53.5 9V2.5V2M53 3V9.5M52.5 4V9.5M52 4V10M51.5 4.5V7V10M51 4.5V6.5M50.5 4.5V6M50 4.5V5.5M49.5 4.5V5"
+                  stroke="#FAC031"
+                  stroke-width="0.5"
+                />
+              </svg>
+              <div>
+                <button
+                  class="w-[6.5rem] h-8 rounded-md bg-black text-white flex items-center justify-center mb-4 dark:bg-primary dark:text-black"
+                >
+                  Order Now
+                </button>
+              </div>
+            </div>
+            <div class="card">
+              <div class="">
+                <img
+                  class="card-img"
+                  src="img/pizza.jpg"
+                  alt="imagen de un plato de biryani"
+                />
+              </div>
+              <h3 class="text-primary font-semibold text-lg">Food name</h3>
+              <p class="font-semibold">
+                Texto de ejemplo del producto donde iría detallado los ingredientes
+              </p>
+              <p class="font-bold">$20.00</p>
+              <svg
+                width="60"
+                height="12"
+                viewBox="0 0 60 12"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M6 1L7.545 4.13L11 4.635L8.5 7.07L9.09 10.51L6 8.885L2.91 10.51L3.5 7.07L1 4.635L4.455 4.13L6 1Z"
+                  fill="#FAC031"
+                />
+                <path
+                  d="M18 1L19.545 4.13L23 4.635L20.5 7.07L21.09 10.51L18 8.885L14.91 10.51L15.5 7.07L13 4.635L16.455 4.13L18 1Z"
+                  fill="#FAC031"
+                />
+                <path
+                  d="M30 1L31.545 4.13L35 4.635L32.5 7.07L33.09 10.51L30 8.885L26.91 10.51L27.5 7.07L25 4.635L28.455 4.13L30 1Z"
+                  fill="#FAC031"
+                />
+                <path
+                  d="M42 1L43.545 4.13L47 4.635L44.5 7.07L45.09 10.51L42 8.885L38.91 10.51L39.5 7.07L37 4.635L40.455 4.13L42 1Z"
+                  fill="#FAC031"
+                />
+                <path
+                  d="M54 1L55.545 4.13L59 4.635L56.5 7.07L57.09 10.51L54 8.885L50.91 10.51L51.5 7.07L49 4.635L52.455 4.13L54 1Z"
+                  stroke="#FAC031"
+                  stroke-width="0.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path d="M54 1.5V9" stroke="#FAC031" stroke-width="0.5" />
+                <path
+                  d="M53.5 9V2.5V2M53 3V9.5M52.5 4V9.5M52 4V10M51.5 4.5V7V10M51 4.5V6.5M50.5 4.5V6M50 4.5V5.5M49.5 4.5V5"
+                  stroke="#FAC031"
+                  stroke-width="0.5"
+                />
+              </svg>
+              <div>
+                <button class="card-btn">Order Now</button>
+              </div>
+            </div>
+            <div class="card">
+              <div class="">
+                <img
+                  class="card-img"
+                  src="img/Spanchi.jpg"
+                  alt="imagen de un plato de biryani"
+                />
+              </div>
+              <h3 class="text-primary font-semibold text-lg">Food name</h3>
+              <p class="font-semibold">
+                Texto de ejemplo del producto donde iría detallado los ingredientes
+              </p>
+              <p class="font-bold">$20.00</p>
+              <svg
+                width="60"
+                height="12"
+                viewBox="0 0 60 12"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M6 1L7.545 4.13L11 4.635L8.5 7.07L9.09 10.51L6 8.885L2.91 10.51L3.5 7.07L1 4.635L4.455 4.13L6 1Z"
+                  fill="#FAC031"
+                />
+                <path
+                  d="M18 1L19.545 4.13L23 4.635L20.5 7.07L21.09 10.51L18 8.885L14.91 10.51L15.5 7.07L13 4.635L16.455 4.13L18 1Z"
+                  fill="#FAC031"
+                />
+                <path
+                  d="M30 1L31.545 4.13L35 4.635L32.5 7.07L33.09 10.51L30 8.885L26.91 10.51L27.5 7.07L25 4.635L28.455 4.13L30 1Z"
+                  fill="#FAC031"
+                />
+                <path
+                  d="M42 1L43.545 4.13L47 4.635L44.5 7.07L45.09 10.51L42 8.885L38.91 10.51L39.5 7.07L37 4.635L40.455 4.13L42 1Z"
+                  fill="#FAC031"
+                />
+                <path
+                  d="M54 1L55.545 4.13L59 4.635L56.5 7.07L57.09 10.51L54 8.885L50.91 10.51L51.5 7.07L49 4.635L52.455 4.13L54 1Z"
+                  stroke="#FAC031"
+                  stroke-width="0.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path d="M54 1.5V9" stroke="#FAC031" stroke-width="0.5" />
+                <path
+                  d="M53.5 9V2.5V2M53 3V9.5M52.5 4V9.5M52 4V10M51.5 4.5V7V10M51 4.5V6.5M50.5 4.5V6M50 4.5V5.5M49.5 4.5V5"
+                  stroke="#FAC031"
+                  stroke-width="0.5"
+                />
+              </svg>
+              <div>
+                <button class="card-btn">Order Now</button>
+              </div>
+            </div>
+            <div class="card">
+              <div class="">
+                <img
+                  class="card-img"
+                  src="img/lasagna.webp"
+                  alt="imagen de un plato de biryani"
+                />
+              </div>
+              <h3 class="text-primary font-semibold text-lg">Food name</h3>
+              <p class="font-semibold">
+                Texto de ejemplo del producto donde iría detallado los ingredientes
+              </p>
+              <p class="font-bold">$20.00</p>
+              <svg
+                width="60"
+                height="12"
+                viewBox="0 0 60 12"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M6 1L7.545 4.13L11 4.635L8.5 7.07L9.09 10.51L6 8.885L2.91 10.51L3.5 7.07L1 4.635L4.455 4.13L6 1Z"
+                  fill="#FAC031"
+                />
+                <path
+                  d="M18 1L19.545 4.13L23 4.635L20.5 7.07L21.09 10.51L18 8.885L14.91 10.51L15.5 7.07L13 4.635L16.455 4.13L18 1Z"
+                  fill="#FAC031"
+                />
+                <path
+                  d="M30 1L31.545 4.13L35 4.635L32.5 7.07L33.09 10.51L30 8.885L26.91 10.51L27.5 7.07L25 4.635L28.455 4.13L30 1Z"
+                  fill="#FAC031"
+                />
+                <path
+                  d="M42 1L43.545 4.13L47 4.635L44.5 7.07L45.09 10.51L42 8.885L38.91 10.51L39.5 7.07L37 4.635L40.455 4.13L42 1Z"
+                  fill="#FAC031"
+                />
+                <path
+                  d="M54 1L55.545 4.13L59 4.635L56.5 7.07L57.09 10.51L54 8.885L50.91 10.51L51.5 7.07L49 4.635L52.455 4.13L54 1Z"
+                  stroke="#FAC031"
+                  stroke-width="0.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path d="M54 1.5V9" stroke="#FAC031" stroke-width="0.5" />
+                <path
+                  d="M53.5 9V2.5V2M53 3V9.5M52.5 4V9.5M52 4V10M51.5 4.5V7V10M51 4.5V6.5M50.5 4.5V6M50 4.5V5.5M49.5 4.5V5"
+                  stroke="#FAC031"
+                  stroke-width="0.5"
+                />
+              </svg>
+              <div>
+                <button class="card-btn">Order Now</button>
+              </div>
+            </div>
+            <div class="card">
+              <div class="">
+                <img
+                  class="card-img"
+                  src="img/sandwich.jpg"
+                  alt="imagen de un plato de biryani"
+                />
+              </div>
+              <h3 class="text-primary font-semibold text-lg">Food name</h3>
+              <p class="font-semibold">
+                Texto de ejemplo del producto donde iría detallado los ingredientes
+              </p>
+              <p class="font-bold">$20.00</p>
+              <svg
+                width="60"
+                height="12"
+                viewBox="0 0 60 12"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M6 1L7.545 4.13L11 4.635L8.5 7.07L9.09 10.51L6 8.885L2.91 10.51L3.5 7.07L1 4.635L4.455 4.13L6 1Z"
+                  fill="#FAC031"
+                />
+                <path
+                  d="M18 1L19.545 4.13L23 4.635L20.5 7.07L21.09 10.51L18 8.885L14.91 10.51L15.5 7.07L13 4.635L16.455 4.13L18 1Z"
+                  fill="#FAC031"
+                />
+                <path
+                  d="M30 1L31.545 4.13L35 4.635L32.5 7.07L33.09 10.51L30 8.885L26.91 10.51L27.5 7.07L25 4.635L28.455 4.13L30 1Z"
+                  fill="#FAC031"
+                />
+                <path
+                  d="M42 1L43.545 4.13L47 4.635L44.5 7.07L45.09 10.51L42 8.885L38.91 10.51L39.5 7.07L37 4.635L40.455 4.13L42 1Z"
+                  fill="#FAC031"
+                />
+                <path
+                  d="M54 1L55.545 4.13L59 4.635L56.5 7.07L57.09 10.51L54 8.885L50.91 10.51L51.5 7.07L49 4.635L52.455 4.13L54 1Z"
+                  stroke="#FAC031"
+                  stroke-width="0.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path d="M54 1.5V9" stroke="#FAC031" stroke-width="0.5" />
+                <path
+                  d="M53.5 9V2.5V2M53 3V9.5M52.5 4V9.5M52 4V10M51.5 4.5V7V10M51 4.5V6.5M50.5 4.5V6M50 4.5V5.5M49.5 4.5V5"
+                  stroke="#FAC031"
+                  stroke-width="0.5"
+                />
+              </svg>
+              <div>
+                <button class="card-btn">Order Now</button>
+              </div>
+            </div>
+            <div class="card">
+              <div class="">
+                <img
+                  class="card-img"
+                  src="img/juse.jpg"
+                  alt="imagen de un plato de biryani"
+                />
+              </div>
+              <h3 class="text-primary font-semibold text-lg">Food name</h3>
+              <p class="font-semibold">
+                Texto de ejemplo del producto donde iría detallado los ingredientes
+              </p>
+              <p class="font-bold">$20.00</p>
+              <svg
+                width="60"
+                height="12"
+                viewBox="0 0 60 12"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M6 1L7.545 4.13L11 4.635L8.5 7.07L9.09 10.51L6 8.885L2.91 10.51L3.5 7.07L1 4.635L4.455 4.13L6 1Z"
+                  fill="#FAC031"
+                />
+                <path
+                  d="M18 1L19.545 4.13L23 4.635L20.5 7.07L21.09 10.51L18 8.885L14.91 10.51L15.5 7.07L13 4.635L16.455 4.13L18 1Z"
+                  fill="#FAC031"
+                />
+                <path
+                  d="M30 1L31.545 4.13L35 4.635L32.5 7.07L33.09 10.51L30 8.885L26.91 10.51L27.5 7.07L25 4.635L28.455 4.13L30 1Z"
+                  fill="#FAC031"
+                />
+                <path
+                  d="M42 1L43.545 4.13L47 4.635L44.5 7.07L45.09 10.51L42 8.885L38.91 10.51L39.5 7.07L37 4.635L40.455 4.13L42 1Z"
+                  fill="#FAC031"
+                />
+                <path
+                  d="M54 1L55.545 4.13L59 4.635L56.5 7.07L57.09 10.51L54 8.885L50.91 10.51L51.5 7.07L49 4.635L52.455 4.13L54 1Z"
+                  stroke="#FAC031"
+                  stroke-width="0.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path d="M54 1.5V9" stroke="#FAC031" stroke-width="0.5" />
+                <path
+                  d="M53.5 9V2.5V2M53 3V9.5M52.5 4V9.5M52 4V10M51.5 4.5V7V10M51 4.5V6.5M50.5 4.5V6M50 4.5V5.5M49.5 4.5V5"
+                  stroke="#FAC031"
+                  stroke-width="0.5"
+                />
+              </svg>
+              <div>
+                <button class="card-btn">Order Now</button>
+              </div>
+            </div>
+            <div class="card">
+              <div class="">
+                <img
+                  class="card-img"
+                  src="img/cake.jpg"
+                  alt="imagen de un plato de biryani"
+                />
+              </div>
+              <h3 class="text-primary font-semibold text-lg">Food name</h3>
+              <p class="font-semibold">
+                Texto de ejemplo del producto donde iría detallado los ingredientes
+              </p>
+              <p class="font-bold">$20.00</p>
+              <svg
+                width="60"
+                height="12"
+                viewBox="0 0 60 12"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M6 1L7.545 4.13L11 4.635L8.5 7.07L9.09 10.51L6 8.885L2.91 10.51L3.5 7.07L1 4.635L4.455 4.13L6 1Z"
+                  fill="#FAC031"
+                />
+                <path
+                  d="M18 1L19.545 4.13L23 4.635L20.5 7.07L21.09 10.51L18 8.885L14.91 10.51L15.5 7.07L13 4.635L16.455 4.13L18 1Z"
+                  fill="#FAC031"
+                />
+                <path
+                  d="M30 1L31.545 4.13L35 4.635L32.5 7.07L33.09 10.51L30 8.885L26.91 10.51L27.5 7.07L25 4.635L28.455 4.13L30 1Z"
+                  fill="#FAC031"
+                />
+                <path
+                  d="M42 1L43.545 4.13L47 4.635L44.5 7.07L45.09 10.51L42 8.885L38.91 10.51L39.5 7.07L37 4.635L40.455 4.13L42 1Z"
+                  fill="#FAC031"
+                />
+                <path
+                  d="M54 1L55.545 4.13L59 4.635L56.5 7.07L57.09 10.51L54 8.885L50.91 10.51L51.5 7.07L49 4.635L52.455 4.13L54 1Z"
+                  stroke="#FAC031"
+                  stroke-width="0.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path d="M54 1.5V9" stroke="#FAC031" stroke-width="0.5" />
+                <path
+                  d="M53.5 9V2.5V2M53 3V9.5M52.5 4V9.5M52 4V10M51.5 4.5V7V10M51 4.5V6.5M50.5 4.5V6M50 4.5V5.5M49.5 4.5V5"
+                  stroke="#FAC031"
+                  stroke-width="0.5"
+                />
+              </svg>
+              <div>
+                <button class="card-btn">Order Now</button>
+              </div>
+            </div>
+            <div class="card">
+              <div class="">
+                <img
+                  class="card-img"
+                  src="img/pasta.jpg"
+                  alt="imagen de un plato de biryani"
+                />
+              </div>
+              <h3 class="text-primary font-semibold text-lg">Food name</h3>
+              <p class="font-semibold">
+                Texto de ejemplo del producto donde iría detallado los ingredientes
+              </p>
+              <p class="font-bold">$20.00</p>
+              <svg
+                width="60"
+                height="12"
+                viewBox="0 0 60 12"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M6 1L7.545 4.13L11 4.635L8.5 7.07L9.09 10.51L6 8.885L2.91 10.51L3.5 7.07L1 4.635L4.455 4.13L6 1Z"
+                  fill="#FAC031"
+                />
+                <path
+                  d="M18 1L19.545 4.13L23 4.635L20.5 7.07L21.09 10.51L18 8.885L14.91 10.51L15.5 7.07L13 4.635L16.455 4.13L18 1Z"
+                  fill="#FAC031"
+                />
+                <path
+                  d="M30 1L31.545 4.13L35 4.635L32.5 7.07L33.09 10.51L30 8.885L26.91 10.51L27.5 7.07L25 4.635L28.455 4.13L30 1Z"
+                  fill="#FAC031"
+                />
+                <path
+                  d="M42 1L43.545 4.13L47 4.635L44.5 7.07L45.09 10.51L42 8.885L38.91 10.51L39.5 7.07L37 4.635L40.455 4.13L42 1Z"
+                  fill="#FAC031"
+                />
+                <path
+                  d="M54 1L55.545 4.13L59 4.635L56.5 7.07L57.09 10.51L54 8.885L50.91 10.51L51.5 7.07L49 4.635L52.455 4.13L54 1Z"
+                  stroke="#FAC031"
+                  stroke-width="0.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path d="M54 1.5V9" stroke="#FAC031" stroke-width="0.5" />
+                <path
+                  d="M53.5 9V2.5V2M53 3V9.5M52.5 4V9.5M52 4V10M51.5 4.5V7V10M51 4.5V6.5M50.5 4.5V6M50 4.5V5.5M49.5 4.5V5"
+                  stroke="#FAC031"
+                  stroke-width="0.5"
+                />
+              </svg>
+              <div>
+                <button class="card-btn">Order Now</button>
+              </div>
+            </div>
+            <div class="card">
+              <div class="">
+                <img
+                  class="card-img"
+                  src="img/ice_cream.jpg"
+                  alt="imagen de un plato de biryani"
+                />
+              </div>
+              <h3 class="text-primary font-semibold text-lg">Food name</h3>
+              <p class="font-semibold">
+                Texto de ejemplo del producto donde iría detallado los ingredientes
+              </p>
+              <p class="font-bold">$20.00</p>
+              <svg
+                width="60"
+                height="12"
+                viewBox="0 0 60 12"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M6 1L7.545 4.13L11 4.635L8.5 7.07L9.09 10.51L6 8.885L2.91 10.51L3.5 7.07L1 4.635L4.455 4.13L6 1Z"
+                  fill="#FAC031"
+                />
+                <path
+                  d="M18 1L19.545 4.13L23 4.635L20.5 7.07L21.09 10.51L18 8.885L14.91 10.51L15.5 7.07L13 4.635L16.455 4.13L18 1Z"
+                  fill="#FAC031"
+                />
+                <path
+                  d="M30 1L31.545 4.13L35 4.635L32.5 7.07L33.09 10.51L30 8.885L26.91 10.51L27.5 7.07L25 4.635L28.455 4.13L30 1Z"
+                  fill="#FAC031"
+                />
+                <path
+                  d="M42 1L43.545 4.13L47 4.635L44.5 7.07L45.09 10.51L42 8.885L38.91 10.51L39.5 7.07L37 4.635L40.455 4.13L42 1Z"
+                  fill="#FAC031"
+                />
+                <path
+                  d="M54 1L55.545 4.13L59 4.635L56.5 7.07L57.09 10.51L54 8.885L50.91 10.51L51.5 7.07L49 4.635L52.455 4.13L54 1Z"
+                  stroke="#FAC031"
+                  stroke-width="0.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path d="M54 1.5V9" stroke="#FAC031" stroke-width="0.5" />
+                <path
+                  d="M53.5 9V2.5V2M53 3V9.5M52.5 4V9.5M52 4V10M51.5 4.5V7V10M51 4.5V6.5M50.5 4.5V6M50 4.5V5.5M49.5 4.5V5"
+                  stroke="#FAC031"
+                  stroke-width="0.5"
+                />
+              </svg>
+              <div>
+                <button class="card-btn">Order Now</button>
+              </div>
+            </div>
+            <div class="card">
+              <div class="">
+                <img
+                  class="card-img"
+                  src="img/chocolate.jpg"
+                  alt="imagen de un plato de biryani"
+                />
+              </div>
+              <h3 class="text-primary font-semibold text-lg">Food name</h3>
+              <p class="font-semibold">
+                Texto de ejemplo del producto donde iría detallado los ingredientes
+              </p>
+              <p class="font-bold">$20.00</p>
+              <svg
+                width="60"
+                height="12"
+                viewBox="0 0 60 12"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M6 1L7.545 4.13L11 4.635L8.5 7.07L9.09 10.51L6 8.885L2.91 10.51L3.5 7.07L1 4.635L4.455 4.13L6 1Z"
+                  fill="#FAC031"
+                />
+                <path
+                  d="M18 1L19.545 4.13L23 4.635L20.5 7.07L21.09 10.51L18 8.885L14.91 10.51L15.5 7.07L13 4.635L16.455 4.13L18 1Z"
+                  fill="#FAC031"
+                />
+                <path
+                  d="M30 1L31.545 4.13L35 4.635L32.5 7.07L33.09 10.51L30 8.885L26.91 10.51L27.5 7.07L25 4.635L28.455 4.13L30 1Z"
+                  fill="#FAC031"
+                />
+                <path
+                  d="M42 1L43.545 4.13L47 4.635L44.5 7.07L45.09 10.51L42 8.885L38.91 10.51L39.5 7.07L37 4.635L40.455 4.13L42 1Z"
+                  fill="#FAC031"
+                />
+                <path
+                  d="M54 1L55.545 4.13L59 4.635L56.5 7.07L57.09 10.51L54 8.885L50.91 10.51L51.5 7.07L49 4.635L52.455 4.13L54 1Z"
+                  stroke="#FAC031"
+                  stroke-width="0.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path d="M54 1.5V9" stroke="#FAC031" stroke-width="0.5" />
+                <path
+                  d="M53.5 9V2.5V2M53 3V9.5M52.5 4V9.5M52 4V10M51.5 4.5V7V10M51 4.5V6.5M50.5 4.5V6M50 4.5V5.5M49.5 4.5V5"
+                  stroke="#FAC031"
+                  stroke-width="0.5"
+                />
+              </svg>
+              <div>
+                <button class="card-btn">Order Now</button>
+              </div>
+            </div>
+            <div class="card">
+              <div class="">
+                <img
+                  class="card-img"
+                  src="img/chocolate_Drink.jpg"
+                  alt="imagen de un plato de biryani"
+                />
+              </div>
+              <h3 class="text-primary font-semibold text-lg">Food name</h3>
+              <p class="font-semibold">
+                Texto de ejemplo del producto donde iría detallado los ingredientes
+              </p>
+              <p class="font-bold">$20.00</p>
+              <svg
+                width="60"
+                height="12"
+                viewBox="0 0 60 12"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M6 1L7.545 4.13L11 4.635L8.5 7.07L9.09 10.51L6 8.885L2.91 10.51L3.5 7.07L1 4.635L4.455 4.13L6 1Z"
+                  fill="#FAC031"
+                />
+                <path
+                  d="M18 1L19.545 4.13L23 4.635L20.5 7.07L21.09 10.51L18 8.885L14.91 10.51L15.5 7.07L13 4.635L16.455 4.13L18 1Z"
+                  fill="#FAC031"
+                />
+                <path
+                  d="M30 1L31.545 4.13L35 4.635L32.5 7.07L33.09 10.51L30 8.885L26.91 10.51L27.5 7.07L25 4.635L28.455 4.13L30 1Z"
+                  fill="#FAC031"
+                />
+                <path
+                  d="M42 1L43.545 4.13L47 4.635L44.5 7.07L45.09 10.51L42 8.885L38.91 10.51L39.5 7.07L37 4.635L40.455 4.13L42 1Z"
+                  fill="#FAC031"
+                />
+                <path
+                  d="M54 1L55.545 4.13L59 4.635L56.5 7.07L57.09 10.51L54 8.885L50.91 10.51L51.5 7.07L49 4.635L52.455 4.13L54 1Z"
+                  stroke="#FAC031"
+                  stroke-width="0.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path d="M54 1.5V9" stroke="#FAC031" stroke-width="0.5" />
+                <path
+                  d="M53.5 9V2.5V2M53 3V9.5M52.5 4V9.5M52 4V10M51.5 4.5V7V10M51 4.5V6.5M50.5 4.5V6M50 4.5V5.5M49.5 4.5V5"
+                  stroke="#FAC031"
+                  stroke-width="0.5"
+                />
+              </svg>
+              <div>
+                <button class="card-btn">Order Now</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="w-full h-auto md:text-center md:mt-10" id="gallery">
+        <h2 class="title-black pl-6">Our<span class="title-yellow"> gallery</span></h2>
+        <div class="overflow-x-auto overscroll-x-contain px-6 sm:scrollbar-none 󠀀">
+          <div class="cards-container md:flex md:justify-center" id="cards-container">
+            <div class="gallery-imgs">
+              <div class="gallery-img bg-gallary1"></div>
+              <div class="gallery-img bg-gallary2"></div>
+              <div class="gallery-img bg-gallary3"></div>
+              <div class="gallery-img bg-gallary4"></div>
+              <div class="gallery-img bg-gallary5"></div>
+              <div class="gallery-img bg-gallary6"></div>
+              <div class="gallery-img bg-sandwich"></div>
+              <div class="gallery-img bg-juice"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="w-full h-auto md:text-center md:mt-10" id="review">
+        <h2 class="title-black pl-6">
+          Customers<span class="title-yellow"> reviews</span>
+        </h2>
+        <div
+          class="overflow-x-auto overscroll-x-contain px-6 sm:scrollbar-none md:flex md:justify-center"
+        >
+          <div class="cards-container-reviews">
+            <div class="review-card">
+              <div class="customer-img bg-customer1"></div>
+              <h3 class="font-semibold text-lg">Clara Lyinn</h3>
+              <svg
+                width="60"
+                height="12"
+                viewBox="0 0 60 12"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M6 1L7.545 4.13L11 4.635L8.5 7.07L9.09 10.51L6 8.885L2.91 10.51L3.5 7.07L1 4.635L4.455 4.13L6 1Z"
+                  fill="#FAC031"
+                />
+                <path
+                  d="M18 1L19.545 4.13L23 4.635L20.5 7.07L21.09 10.51L18 8.885L14.91 10.51L15.5 7.07L13 4.635L16.455 4.13L18 1Z"
+                  fill="#FAC031"
+                />
+                <path
+                  d="M30 1L31.545 4.13L35 4.635L32.5 7.07L33.09 10.51L30 8.885L26.91 10.51L27.5 7.07L25 4.635L28.455 4.13L30 1Z"
+                  fill="#FAC031"
+                />
+                <path
+                  d="M42 1L43.545 4.13L47 4.635L44.5 7.07L45.09 10.51L42 8.885L38.91 10.51L39.5 7.07L37 4.635L40.455 4.13L42 1Z"
+                  fill="#FAC031"
+                />
+                <path
+                  d="M54 1L55.545 4.13L59 4.635L56.5 7.07L57.09 10.51L54 8.885L50.91 10.51L51.5 7.07L49 4.635L52.455 4.13L54 1Z"
+                  stroke="#FAC031"
+                  stroke-width="0.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path d="M54 1.5V9" stroke="#FAC031" stroke-width="0.5" />
+                <path
+                  d="M53.5 9V2.5V2M53 3V9.5M52.5 4V9.5M52 4V10M51.5 4.5V7V10M51 4.5V6.5M50.5 4.5V6M50 4.5V5.5M49.5 4.5V5"
+                  stroke="#FAC031"
+                  stroke-width="0.5"
+                />
+              </svg>
+              <p class="px-3">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut vestibulum
+                tempus mollis. Fusce a efficitur nibh. Nunc suscipit diam non justo
+                semper, quis placerat risus iaculis. Duis ac leo pulvinar, interdum diam
+                in, fringilla lacus. Curabitur a ultricies ligula.
+              </p>
+            </div>
+            <div class="review-card">
+              <div class="customer-img bg-customer2"></div>
+              <h3 class="font-semibold text-lg">Jhon Evans</h3>
+              <svg
+                width="60"
+                height="12"
+                viewBox="0 0 60 12"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M6 1L7.545 4.13L11 4.635L8.5 7.07L9.09 10.51L6 8.885L2.91 10.51L3.5 7.07L1 4.635L4.455 4.13L6 1Z"
+                  fill="#FAC031"
+                />
+                <path
+                  d="M18 1L19.545 4.13L23 4.635L20.5 7.07L21.09 10.51L18 8.885L14.91 10.51L15.5 7.07L13 4.635L16.455 4.13L18 1Z"
+                  fill="#FAC031"
+                />
+                <path
+                  d="M30 1L31.545 4.13L35 4.635L32.5 7.07L33.09 10.51L30 8.885L26.91 10.51L27.5 7.07L25 4.635L28.455 4.13L30 1Z"
+                  fill="#FAC031"
+                />
+                <path
+                  d="M42 1L43.545 4.13L47 4.635L44.5 7.07L45.09 10.51L42 8.885L38.91 10.51L39.5 7.07L37 4.635L40.455 4.13L42 1Z"
+                  fill="#FAC031"
+                />
+                <path
+                  d="M54 1L55.545 4.13L59 4.635L56.5 7.07L57.09 10.51L54 8.885L50.91 10.51L51.5 7.07L49 4.635L52.455 4.13L54 1Z"
+                  stroke="#FAC031"
+                  stroke-width="0.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path d="M54 1.5V9" stroke="#FAC031" stroke-width="0.5" />
+                <path
+                  d="M53.5 9V2.5V2M53 3V9.5M52.5 4V9.5M52 4V10M51.5 4.5V7V10M51 4.5V6.5M50.5 4.5V6M50 4.5V5.5M49.5 4.5V5"
+                  stroke="#FAC031"
+                  stroke-width="0.5"
+                />
+              </svg>
+              <p class="px-3">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut vestibulum
+                tempus mollis. Fusce a efficitur nibh. Nunc suscipit diam non justo
+                semper, quis placerat risus iaculis. Duis ac leo pulvinar, interdum diam
+                in, fringilla lacus. Curabitur a ultricies ligula.
+              </p>
+            </div>
+            <div class="review-card">
+              <div class="customer-img bg-customer3"></div>
+              <h3 class="font-semibold text-lg">Sarah Black</h3>
+              <svg
+                width="60"
+                height="12"
+                viewBox="0 0 60 12"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M6 1L7.545 4.13L11 4.635L8.5 7.07L9.09 10.51L6 8.885L2.91 10.51L3.5 7.07L1 4.635L4.455 4.13L6 1Z"
+                  fill="#FAC031"
+                />
+                <path
+                  d="M18 1L19.545 4.13L23 4.635L20.5 7.07L21.09 10.51L18 8.885L14.91 10.51L15.5 7.07L13 4.635L16.455 4.13L18 1Z"
+                  fill="#FAC031"
+                />
+                <path
+                  d="M30 1L31.545 4.13L35 4.635L32.5 7.07L33.09 10.51L30 8.885L26.91 10.51L27.5 7.07L25 4.635L28.455 4.13L30 1Z"
+                  fill="#FAC031"
+                />
+                <path
+                  d="M42 1L43.545 4.13L47 4.635L44.5 7.07L45.09 10.51L42 8.885L38.91 10.51L39.5 7.07L37 4.635L40.455 4.13L42 1Z"
+                  fill="#FAC031"
+                />
+                <path
+                  d="M54 1L55.545 4.13L59 4.635L56.5 7.07L57.09 10.51L54 8.885L50.91 10.51L51.5 7.07L49 4.635L52.455 4.13L54 1Z"
+                  stroke="#FAC031"
+                  stroke-width="0.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path d="M54 1.5V9" stroke="#FAC031" stroke-width="0.5" />
+                <path
+                  d="M53.5 9V2.5V2M53 3V9.5M52.5 4V9.5M52 4V10M51.5 4.5V7V10M51 4.5V6.5M50.5 4.5V6M50 4.5V5.5M49.5 4.5V5"
+                  stroke="#FAC031"
+                  stroke-width="0.5"
+                />
+              </svg>
+              <p class="px-3">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut vestibulum
+                tempus mollis. Fusce a efficitur nibh. Nunc suscipit diam non justo
+                semper, quis placerat risus iaculis. Duis ac leo pulvinar, interdum diam
+                in, fringilla lacus. Curabitur a ultricies ligula.
+              </p>
+            </div>
+            <div class="review-card">
+              <div class="customer-img bg-customer4"></div>
+              <h3 class="font-semibold text-lg">Mike Ford</h3>
+              <svg
+                width="60"
+                height="12"
+                viewBox="0 0 60 12"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M6 1L7.545 4.13L11 4.635L8.5 7.07L9.09 10.51L6 8.885L2.91 10.51L3.5 7.07L1 4.635L4.455 4.13L6 1Z"
+                  fill="#FAC031"
+                />
+                <path
+                  d="M18 1L19.545 4.13L23 4.635L20.5 7.07L21.09 10.51L18 8.885L14.91 10.51L15.5 7.07L13 4.635L16.455 4.13L18 1Z"
+                  fill="#FAC031"
+                />
+                <path
+                  d="M30 1L31.545 4.13L35 4.635L32.5 7.07L33.09 10.51L30 8.885L26.91 10.51L27.5 7.07L25 4.635L28.455 4.13L30 1Z"
+                  fill="#FAC031"
+                />
+                <path
+                  d="M42 1L43.545 4.13L47 4.635L44.5 7.07L45.09 10.51L42 8.885L38.91 10.51L39.5 7.07L37 4.635L40.455 4.13L42 1Z"
+                  fill="#FAC031"
+                />
+                <path
+                  d="M54 1L55.545 4.13L59 4.635L56.5 7.07L57.09 10.51L54 8.885L50.91 10.51L51.5 7.07L49 4.635L52.455 4.13L54 1Z"
+                  stroke="#FAC031"
+                  stroke-width="0.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path d="M54 1.5V9" stroke="#FAC031" stroke-width="0.5" />
+                <path
+                  d="M53.5 9V2.5V2M53 3V9.5M52.5 4V9.5M52 4V10M51.5 4.5V7V10M51 4.5V6.5M50.5 4.5V6M50 4.5V5.5M49.5 4.5V5"
+                  stroke="#FAC031"
+                  stroke-width="0.5"
+                />
+              </svg>
+              <p class="px-3">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut vestibulum
+                tempus mollis. Fusce a efficitur nibh. Nunc suscipit diam non justo
+                semper, quis placerat risus iaculis. Duis ac leo pulvinar, interdum diam
+                in, fringilla lacus. Curabitur a ultricies ligula.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="w-full h-auto md:text-center md:mt-10" id="form">
+        <h2 class="title-black pl-6">Order<span class="title-yellow"> now</span></h2>
+        <div class="md:w-full md:h-auto md:flex md:justify-center">
+          <div class="md:w-1/2 md:h-[65rem] bg-formImg bg-cover bg-center"></div>
+          <form class="form" action="">
+            <input class="form-input" type="text" placeholder="Name" />
+            <input class="form-input" type="tel" placeholder="Number" />
+            <input class="form-input" type="text" placeholder="Food name" />
+            <input class="form-input" type="email" placeholder="Mail" />
+            <input class="form-input" type="number" placeholder="How many orders?" />
+            <input class="form-input" type="text" placeholder="Adress" />
+            <div class="w-full h-auto flex justify-end">
+              <button
+                class="w-32 h-10 rounded-md bg-primary flex items-center justify-center mr-3 hover:font-semibold hover:bg-[#FFD368]"
+              >
+                Order now
+                <i
+                  ><svg
+                    width="19"
+                    height="18"
+                    viewBox="0 0 19 18"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M7.125 13.5L11.875 9L7.125 4.5"
+                      stroke="black"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </i>
+              </button>
+            </div>
+          </form>
+        </div>
+      </section>
+      <section class="text-center my-8" id="team">
+        <h2 class="title-black pl-6">Our<span class="title-yellow"> team</span></h2>
+        <div
+          class="overflow-x-auto overscroll-x-contain px-6 scrollbar-none md:flex md:justify-center"
+        >
+          <div class="cards-container-team">
+            <div class="chef-container"><div class="chef-img bg-chef1"></div></div>
+            <div class="chef-container"><div class="chef-img bg-chef2"></div></div>
+            <div class="chef-container"><div class="chef-img bg-chef3"></div></div>
+            <div class="chef-container"><div class="chef-img bg-chef4"></div></div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="w-full h-auto bg-primary flex sm:mb-12 md:mb-0" id="footer">
+      <div class="ml-3 md:w-full md:flex md:text-center md:justify-between md:p-5 sm:h-auto">
+        <div>
+          <h3 class="text-xl font-semibold mt-3">Location</h3>
+          <p>Sri Lanka</p>
+          <p>USA</p>
+          <p>India</p>
+          <p>Japan</p>
+          <p>Italy</p>
+        </div>
+        <div>
+          <h3 class="text-xl font-semibold mt-3">Quick Link</h3>
+          <p>Home</p>
+          <p>About</p>
+          <p>Menu</p>
+          <p>Gallery</p>
+          <p>Order</p>
+        </div>
+        <div>
+          <h3 class="text-xl font-semibold mt-3">Contact</h3>
+          <p>+94 12 3456 789</p>
+          <p>+94 12 5667 859</p>
+          <p>foodshop123@gmail.com</p>
+        </div>
+        <div>
+          <h3 class="text-xl font-semibold mt-3">Services</h3>
+          <p>Fast delivery</p>
+          <p>Easy Payments</p>
+          <p>24/7 Service</p>
+        </div>
+        <div class="w-auto flex flex-col items-center sm:hidden">
+          <h3 class="text-xl font-semibold mt-3">Follow us</h3>
+          <div>
+            <svg
+              width="120"
+              height="24"
+              viewBox="0 0 95 16"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <g clip-path="url(#clip0_9_1131)">
+                <path
+                  d="M15.007 2.0067C14.3955 2.45702 13.7184 2.80144 13.0018 3.0267C12.6172 2.56504 12.1061 2.23783 11.5375 2.08932C10.969 1.94081 10.3705 1.97817 9.82294 2.19634C9.2754 2.41451 8.80525 2.80297 8.47608 3.30918C8.14691 3.81539 7.9746 4.41493 7.98245 5.0267V5.69337C6.86021 5.72375 5.74818 5.46391 4.74541 4.937C3.74265 4.41009 2.88027 3.63246 2.23509 2.67337C2.23509 2.67337 -0.3193 8.67337 5.42807 11.34C4.1129 12.272 2.54618 12.7393 0.957893 12.6734C6.70526 16.0067 13.7298 12.6734 13.7298 5.0067C13.7292 4.82101 13.7121 4.63577 13.6787 4.45337C14.3305 3.78237 14.7904 2.93518 15.007 2.0067Z"
+                  stroke="black"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </g>
+              <path
+                d="M37.6772 1.33325H31.2912C29.5278 1.33325 28.0982 2.82564 28.0982 4.66658V11.3333C28.0982 13.1742 29.5278 14.6666 31.2912 14.6666H37.6772C39.4406 14.6666 40.8702 13.1742 40.8702 11.3333V4.66658C40.8702 2.82564 39.4406 1.33325 37.6772 1.33325Z"
+                stroke="black"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <path
+                d="M37.0386 7.57996C37.1174 8.13479 37.0266 8.70143 36.7792 9.1993C36.5317 9.69717 36.1402 10.1009 35.6603 10.3531C35.1803 10.6052 34.6365 10.693 34.106 10.6039C33.5756 10.5148 33.0855 10.2533 32.7056 9.85673C32.3257 9.46012 32.0753 8.94854 31.9899 8.39477C31.9045 7.84099 31.9886 7.27322 32.2302 6.77221C32.4717 6.27119 32.8585 5.86245 33.3354 5.60412C33.8123 5.34579 34.3551 5.25102 34.8865 5.33329C35.4286 5.41721 35.9305 5.68093 36.3181 6.08549C36.7056 6.49006 36.9582 7.01401 37.0386 7.57996Z"
+                stroke="black"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <path
+                d="M37.9965 4.33325H38.0032"
+                stroke="black"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <path
+                d="M65.1368 1.33325H63.2211C62.3742 1.33325 61.5621 1.68444 60.9633 2.30956C60.3645 2.93468 60.0281 3.78253 60.0281 4.66659V6.66658H58.1123V9.33325H60.0281V14.6666H62.5825V9.33325H64.4982L65.1368 6.66658H62.5825V4.66659C62.5825 4.48977 62.6497 4.3202 62.7695 4.19518C62.8893 4.07016 63.0517 3.99992 63.2211 3.99992H65.1368V1.33325Z"
+                stroke="black"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <path
+                d="M89.6667 5.33325C90.7275 5.33325 91.7449 5.75468 92.4951 6.50482C93.2452 7.25497 93.6667 8.27239 93.6667 9.33325V13.9999H91V9.33325C91 8.97963 90.8595 8.64049 90.6095 8.39044C90.3594 8.14039 90.0203 7.99992 89.6667 7.99992C89.313 7.99992 88.9739 8.14039 88.7239 8.39044C88.4738 8.64049 88.3333 8.97963 88.3333 9.33325V13.9999H85.6667V9.33325C85.6667 8.27239 86.0881 7.25497 86.8382 6.50482C87.5884 5.75468 88.6058 5.33325 89.6667 5.33325Z"
+                stroke="black"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <path
+                d="M83 6H80.3333V14H83V6Z"
+                stroke="black"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <path
+                d="M81.6667 3.99992C82.403 3.99992 83 3.40297 83 2.66659C83 1.93021 82.403 1.33325 81.6667 1.33325C80.9303 1.33325 80.3333 1.93021 80.3333 2.66659C80.3333 3.40297 80.9303 3.99992 81.6667 3.99992Z"
+                stroke="black"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <defs>
+                <clipPath id="clip0_9_1131">
+                  <rect width="15.3263" height="16" fill="white" />
+                </clipPath>
+              </defs>
+            </svg>
+          </div>
+        </div>
+      </div>
+      <div class="w-auto flex flex-col items-center">
+        <h3 class="text-xl font-semibold mt-3">Follow us</h3>
+        <div>
+          <svg
+            width="120"
+            height="24"
+            viewBox="0 0 95 16"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <g clip-path="url(#clip0_9_1131)">
+              <path
+                d="M15.007 2.0067C14.3955 2.45702 13.7184 2.80144 13.0018 3.0267C12.6172 2.56504 12.1061 2.23783 11.5375 2.08932C10.969 1.94081 10.3705 1.97817 9.82294 2.19634C9.2754 2.41451 8.80525 2.80297 8.47608 3.30918C8.14691 3.81539 7.9746 4.41493 7.98245 5.0267V5.69337C6.86021 5.72375 5.74818 5.46391 4.74541 4.937C3.74265 4.41009 2.88027 3.63246 2.23509 2.67337C2.23509 2.67337 -0.3193 8.67337 5.42807 11.34C4.1129 12.272 2.54618 12.7393 0.957893 12.6734C6.70526 16.0067 13.7298 12.6734 13.7298 5.0067C13.7292 4.82101 13.7121 4.63577 13.6787 4.45337C14.3305 3.78237 14.7904 2.93518 15.007 2.0067Z"
+                stroke="black"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </g>
+            <path
+              d="M37.6772 1.33325H31.2912C29.5278 1.33325 28.0982 2.82564 28.0982 4.66658V11.3333C28.0982 13.1742 29.5278 14.6666 31.2912 14.6666H37.6772C39.4406 14.6666 40.8702 13.1742 40.8702 11.3333V4.66658C40.8702 2.82564 39.4406 1.33325 37.6772 1.33325Z"
+              stroke="black"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+            <path
+              d="M37.0386 7.57996C37.1174 8.13479 37.0266 8.70143 36.7792 9.1993C36.5317 9.69717 36.1402 10.1009 35.6603 10.3531C35.1803 10.6052 34.6365 10.693 34.106 10.6039C33.5756 10.5148 33.0855 10.2533 32.7056 9.85673C32.3257 9.46012 32.0753 8.94854 31.9899 8.39477C31.9045 7.84099 31.9886 7.27322 32.2302 6.77221C32.4717 6.27119 32.8585 5.86245 33.3354 5.60412C33.8123 5.34579 34.3551 5.25102 34.8865 5.33329C35.4286 5.41721 35.9305 5.68093 36.3181 6.08549C36.7056 6.49006 36.9582 7.01401 37.0386 7.57996Z"
+              stroke="black"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+            <path
+              d="M37.9965 4.33325H38.0032"
+              stroke="black"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+            <path
+              d="M65.1368 1.33325H63.2211C62.3742 1.33325 61.5621 1.68444 60.9633 2.30956C60.3645 2.93468 60.0281 3.78253 60.0281 4.66659V6.66658H58.1123V9.33325H60.0281V14.6666H62.5825V9.33325H64.4982L65.1368 6.66658H62.5825V4.66659C62.5825 4.48977 62.6497 4.3202 62.7695 4.19518C62.8893 4.07016 63.0517 3.99992 63.2211 3.99992H65.1368V1.33325Z"
+              stroke="black"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+            <path
+              d="M89.6667 5.33325C90.7275 5.33325 91.7449 5.75468 92.4951 6.50482C93.2452 7.25497 93.6667 8.27239 93.6667 9.33325V13.9999H91V9.33325C91 8.97963 90.8595 8.64049 90.6095 8.39044C90.3594 8.14039 90.0203 7.99992 89.6667 7.99992C89.313 7.99992 88.9739 8.14039 88.7239 8.39044C88.4738 8.64049 88.3333 8.97963 88.3333 9.33325V13.9999H85.6667V9.33325C85.6667 8.27239 86.0881 7.25497 86.8382 6.50482C87.5884 5.75468 88.6058 5.33325 89.6667 5.33325Z"
+              stroke="black"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+            <path
+              d="M83 6H80.3333V14H83V6Z"
+              stroke="black"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+            <path
+              d="M81.6667 3.99992C82.403 3.99992 83 3.40297 83 2.66659C83 1.93021 82.403 1.33325 81.6667 1.33325C80.9303 1.33325 80.3333 1.93021 80.3333 2.66659C80.3333 3.40297 80.9303 3.99992 81.6667 3.99992Z"
+              stroke="black"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+            <defs>
+              <clipPath id="clip0_9_1131">
+                <rect width="15.3263" height="16" fill="white" />
+              </clipPath>
+            </defs>
+          </svg>
+        </div>
+      </div>
+    </footer>
+    <div
+      class="fixed w-screen h-12 bg-primary flex justify-evenly items-center bottom-0 shadow-xl md:hidden"
+      id="tab-bar-mobile"
+    >
+      <div>
+        <a href="#hero"
+          ><svg
+            width="28"
+            height="28"
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M3 9L12 2L21 9V20C21 20.5304 20.7893 21.0391 20.4142 21.4142C20.0391 21.7893 19.5304 22 19 22H5C4.46957 22 3.96086 21.7893 3.58579 21.4142C3.21071 21.0391 3 20.5304 3 20V9Z"
+              stroke="black"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+            <path
+              d="M9 22V12H15V22"
+              stroke="black"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+        </a>
+      </div>
+      <div>
+        <a href="#nav">
+          <svg
+            width="28"
+            height="28"
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M11 19C15.4183 19 19 15.4183 19 11C19 6.58172 15.4183 3 11 3C6.58172 3 3 6.58172 3 11C3 15.4183 6.58172 19 11 19Z"
+              stroke="black"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+            <path
+              d="M21 21L16.65 16.65"
+              stroke="black"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+        </a>
+      </div>
+
+      <div>
+        <a href="#menu"
+          ><svg
+            width="28"
+            height="28"
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M16 4H18C18.5304 4 19.0391 4.21071 19.4142 4.58579C19.7893 4.96086 20 5.46957 20 6V20C20 20.5304 19.7893 21.0391 19.4142 21.4142C19.0391 21.7893 18.5304 22 18 22H6C5.46957 22 4.96086 21.7893 4.58579 21.4142C4.21071 21.0391 4 20.5304 4 20V6C4 5.46957 4.21071 4.96086 4.58579 4.58579C4.96086 4.21071 5.46957 4 6 4H8"
+              stroke="black"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+            <path
+              d="M15 2H9C8.44772 2 8 2.44772 8 3V5C8 5.55228 8.44772 6 9 6H15C15.5523 6 16 5.55228 16 5V3C16 2.44772 15.5523 2 15 2Z"
+              stroke="black"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+        </a>
+      </div>
+      <div>
+        <a href="#review">
+          <svg
+            width="28"
+            height="28"
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"
+              stroke="black"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+        </a>
+      </div>
+      <div>
+        <a href="#form"
+          ><svg
+            width="28"
+            height="28"
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M16 3H1V16H16V3Z"
+              stroke="black"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+            <path
+              d="M16 8H20L23 11V16H16V8Z"
+              stroke="black"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+            <path
+              d="M5.5 21C6.88071 21 8 19.8807 8 18.5C8 17.1193 6.88071 16 5.5 16C4.11929 16 3 17.1193 3 18.5C3 19.8807 4.11929 21 5.5 21Z"
+              stroke="black"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+            <path
+              d="M18.5 21C19.8807 21 21 19.8807 21 18.5C21 17.1193 19.8807 16 18.5 16C17.1193 16 16 17.1193 16 18.5C16 19.8807 17.1193 21 18.5 21Z"
+              stroke="black"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+        </a>
+      </div>
+    </div>
+    <script>
+      const htmlElement = document.querySelector("html");
+      const darkBtn = document.querySelector("#dark-btn");
+      const darkBtnSm = document.querySelector("#dark-btn-sm");
+
+      darkBtn.addEventListener("click", () => {
+        htmlElement.classList.toggle("dark");
+      });
+
+      darkBtnSm.addEventListener("click", () => {
+        htmlElement.classList.toggle("dark");
+      });
+    </script>
+  </body>
+</html>

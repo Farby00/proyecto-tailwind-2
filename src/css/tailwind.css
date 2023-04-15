@@ -1,0 +1,83 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.dark-mode {
+  @apply w-full h-auto flex justify-end items-center mt-3;
+}
+
+.title-black {
+  @apply text-4xl font-semibold dark:text-white md:text-6xl;
+}
+
+.title-yellow {
+  @apply font-mvBoli text-primary;
+}
+
+.title-2 {
+  @apply text-2xl font-semibold;
+}
+
+.cards-container-menu {
+  @apply w-max h-auto flex justify-center  overflow-x-auto overscroll-x-contain snap-x space-x-6 scrollbar-none md:grid md:grid-cols-3 md:grid-rows-4 xl:grid-cols-4 xl:grid-rows-3 md:space-x-0 md:gap-6;
+}
+
+.card {
+  @apply w-[20.5rem] h-auto flex flex-col text-center items-center justify-center snap-center space-y-3 shadow-lg rounded-lg my-8 flex-none dark:bg-gray-800 border-[#FAC031] dark:text-white md:my-0 dark:hover:bg-gray-600 hover:cursor-pointer;
+}
+
+.card-btn {
+  @apply w-[6.5rem] h-8 rounded-md bg-black text-white flex items-center justify-center mb-4 hover:font-semibold hover:text-black hover:bg-primary dark:bg-primary dark:text-black;
+}
+
+.card-img {
+  @apply w-[20rem] h-[11.5rem] p-2;
+}
+
+.gallery-imgs {
+  @apply w-max h-auto flex justify-center overflow-x-auto overscroll-x-contain space-x-6 scrollbar-none md:grid md:grid-cols-2 md:grid-rows-3 lg:grid-cols-3 lg:grid-rows-3 xl:grid-cols-4 xl:grid-rows-2 md:space-x-0 md:gap-6 md:h-max md:my-10;
+}
+
+.gallery-img {
+  @apply w-80 h-52 rounded-lg bg-cover my-8 shadow-lg flex-none md:my-0;
+}
+
+.cards-container-reviews {
+  @apply w-max h-auto flex justify-center  overflow-x-auto overscroll-x-contain snap-x space-x-6 scrollbar-none md:grid md:grid-cols-2 md:grid-rows-2 lg:grid-cols-4 lg:grid-rows-1 md:space-x-0 md:gap-6;
+}
+
+.reviews-cards {
+  @apply w-max h-auto flex justify-center overflow-x-auto overscroll-x-contain space-x-6 scrollbar-none;
+}
+
+.review-card {
+  @apply w-64 h-auto flex flex-col justify-center items-center space-y-4 py-2 my-8 rounded-lg shadow-lg border-solid border-2 border-gray-300 hover:border-[#FAC031] flex-none dark:bg-gray-700 dark:text-white dark:hover:bg-gray-500 hover:cursor-pointer;
+}
+
+.customer-img {
+  @apply w-28 h-28  rounded-full border-solid border-2 bg-cover border-[#FAC031];
+}
+
+.form {
+  @apply w-full h-auto space-y-6 flex flex-col justify-center items-center px-3 my-8 md:w-2/5;
+}
+
+.form-input {
+  @apply w-full h-11 bg-gray-100 border-solid border-2 border-gray-300 rounded-md px-2;
+}
+
+.form-btn {
+  @apply w-24 h-7 bg-primary border-none font-normal text-lg mb-20 rounded-sm;
+}
+
+.cards-container-team {
+  @apply w-max h-auto flex justify-center  overflow-x-auto overscroll-x-contain snap-x space-x-6 scrollbar-none md:grid md:grid-cols-4 md:space-x-0 md:gap-6;
+}
+
+.chef-container {
+  @apply w-56 h-56 rounded-full bg-white border-solid border-gray-300 hover:border-[#FAC031] border-2 flex justify-center items-center dark:bg-transparent my-8 dark:hover:bg-gray-500 hover:cursor-pointer;
+}
+
+.chef-img {
+  @apply w-40 h-40  bg-cover bg-center rounded-full;
+}
