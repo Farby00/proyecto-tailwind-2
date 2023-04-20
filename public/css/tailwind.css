@@ -1544,6 +1544,10 @@ video {
     width: 50%;
   }
 
+  .md\:w-2\/4 {
+    width: 50%;
+  }
+
   .md\:w-\[40rem\] {
     width: 40rem;
   }
@@ -1559,10 +1563,6 @@ video {
 
   .md\:w-screen {
     width: 100vw;
-  }
-
-  .md\:w-2\/4 {
-    width: 50%;
   }
 
   .md\:flex-row-reverse {
@@ -1596,16 +1596,6 @@ video {
   .md\:px-0 {
     padding-left: 0px;
     padding-right: 0px;
-  }
-
-  .md\:px-3 {
-    padding-left: 0.75rem;
-    padding-right: 0.75rem;
-  }
-
-  .md\:px-6 {
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
   }
 
   .md\:text-center {
